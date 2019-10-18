@@ -29,9 +29,54 @@ ln -s ~/Projects/flat-remix ~/.icons
 ##Cursor theme
 sudo mv /usr/share/icons/Cursor /usr/share/icons/Cursors-backup
 sudo ln -s ~/Projects/starlabs-cursor-theme/themes/StarLabs /usr/share/icons/Cursors
+# Option to select the gtk theme
+echo Flat-Remix-GTK-Blue
+echo Flat-Remix-GTK-Blue-Dark
+echo Flat-Remix-GTK-Blue-Darker
+echo Flat-Remix-GTK-Blue-Darker-Solid
+echo Flat-Remix-GTK-Blue-Darkest
+echo Flat-Remix-GTK-Blue-Darkest-NoBorder
+echo Flat-Remix-GTK-Blue-Darkest-Solid
+echo Flat-Remix-GTK-Blue-Darkest-Solid-NoBorder
+echo Flat-Remix-GTK-Blue-Dark-Solid
+echo Flat-Remix-GTK-Blue-Solid
+echo Flat-Remix-GTK-Green
+echo Flat-Remix-GTK-Green-Dark
+echo Flat-Remix-GTK-Green-Darker
+echo Flat-Remix-GTK-Green-Darker-Solid
+echo Flat-Remix-GTK-Green-Darkest
+echo Flat-Remix-GTK-Green-Darkest-NoBorder
+echo Flat-Remix-GTK-Green-Darkest-Solid
+echo Flat-Remix-GTK-Green-Darkest-Solid-NoBorder
+echo Flat-Remix-GTK-Green-Dark-Solid
+echo Flat-Remix-GTK-Green-Solid
+echo Flat-Remix-GTK-Red
+echo Flat-Remix-GTK-Red-Dark
+echo Flat-Remix-GTK-Red-Darker
+echo Flat-Remix-GTK-Red-Darker-Solid
+echo Flat-Remix-GTK-Red-Darkest
+echo Flat-Remix-GTK-Red-Darkest-NoBorder
+echo Flat-Remix-GTK-Red-Darkest-Solid
+echo Flat-Remix-GTK-Red-Darkest-Solid-NoBorder
+echo Flat-Remix-GTK-Red-Dark-Solid
+echo Flat-Remix-GTK-Red-Solid
+echo Flat-Remix-GTK-Yellow
+echo Flat-Remix-GTK-Yellow-Dark
+echo Flat-Remix-GTK-Yellow-Darker
+echo Flat-Remix-GTK-Yellow-Darker-Solid
+echo Flat-Remix-GTK-Yellow-Darkest
+echo Flat-Remix-GTK-Yellow-Darkest-NoBorder
+echo Flat-Remix-GTK-Yellow-Darkest-Solid
+echo Flat-Remix-GTK-Yellow-Darkest-Solid-NoBorder
+echo Flat-Remix-GTK-Yellow-Dark-Solid
+echo Flat-Remix-GTK-Yellow-Solid
+echo Enter choice : 
+read flatremixgtk
+gsettings set org.gnome.desktop.interface gtk-theme "$flatremixgtk"
 
-
-gsettings set org.gnome.desktop.interface gtk-theme "Flat-Remix-GTK-Blue-Darkest-NoBorder"
+# option to select icon theme
 gsettings set org.gnome.desktop.interface icon-theme 'Flat-Remix-Blue-Dark'
+
+#option to select gnome theme
 gsettings set org.gnome.desktop.wm.preferences theme "Flat-Remix-Darkest-fullPanel"
 gsettings set org.gnome.desktop.interface cursor-theme 'Cursors'
