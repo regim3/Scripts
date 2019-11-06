@@ -29,6 +29,7 @@ ln -s ~/Projects/flat-remix ~/.icons
 ##Cursor theme
 sudo mv /usr/share/icons/Cursor /usr/share/icons/Cursors-backup
 sudo ln -s ~/Projects/starlabs-cursor-theme/themes/StarLabs /usr/share/icons/Cursors
+
 # Option to select the gtk theme
 echo Flat-Remix-GTK-Blue
 echo Flat-Remix-GTK-Blue-Dark
@@ -67,16 +68,39 @@ echo Flat-Remix-GTK-Yellow-Darker-Solid
 echo Flat-Remix-GTK-Yellow-Darkest
 echo Flat-Remix-GTK-Yellow-Darkest-NoBorder
 echo Flat-Remix-GTK-Yellow-Darkest-Solid
-echo Flat-Remix-GTK-Yellow-Darkest-Solid-NoBorder
-echo Flat-Remix-GTK-Yellow-Dark-Solid
-echo Flat-Remix-GTK-Yellow-Solid
+echo Flat-Remix-GTK-Yellow-Darkest
+
 echo Enter choice : 
 read flatremixgtk
 gsettings set org.gnome.desktop.interface gtk-theme "$flatremixgtk"
+echo $flatfemixgtk Applied !!
 
 # option to select icon theme
-gsettings set org.gnome.desktop.interface icon-theme 'Flat-Remix-Blue-Dark'
+echo Flat-Remix-Blue     Flat-Remix-Blue-Light    Flat-Remix-Blue-Dark
+echo Flat-Remix-Yellow   Flat-Remix-Yellow-Light  Flat-Remix-Yellow-Dark
+echo Flat-Remix-Green    Flat-Remix-Green-Light   Flat-Remix-Green-Dark
+echo Flat-Remix-Red      Flat-Remix-Red-Light     Flat-Remix-Red-Dark   
+
+echo Enter Choice :
+read flatremix
+gsettings set org.gnome.desktop.interface icon-theme "$flatremix"
+echo $flatremix Applied !
 
 #option to select gnome theme
-gsettings set org.gnome.desktop.wm.preferences theme "Flat-Remix-Darkest-fullPanel"
+echo Flat-Remix                    Flat-Remix-fullPanel
+echo Flat-Remix-Dark               Flat-Remix-Dark-fullPanel
+echo Flat-Remix-Miami              Flat-Remix-Miami-fullPanel
+echo Flat-Remix-Miami-Dark         Flat-Remix-Miami-Dark-fullPanel
+echo Flat-Remix-Darkest            Flat-Remix-Darkest-fullPanel   
+
+echo Enter Choice :
+read flatremixgnome
+gsettings set org.gnome.desktop.wm.preferences theme "$flatremixgnome"
+echo $flatremixgnome Applied !
+
+echo Setting Cursor theme to StarLabs Cursor...
 gsettings set org.gnome.desktop.interface cursor-theme 'Cursors'
+echo Starlabs Cursor theme applied !
+
+echo Thanks : )
+echo Check out my GitHub profile at github.com/kushagrakarira
