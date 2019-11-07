@@ -1,9 +1,9 @@
 #!/bin/bash
 
-
 #Installs Flat Remix and StarLabs
 
 # This will install flat remix, flat remix gtk and flat remix gnome
+
 # Firstly, cloning all repo. to ./Projects
 cd
 mkdir Projects
@@ -11,24 +11,22 @@ cd Projects
 git clone https://github.com/daniruiz/flat-remix-gtk.git
 git clone https://github.com/daniruiz/flat-remix.git
 git clone https://github.com/daniruiz/flat-remix-gnome.git
-git clone https://github.com/StarLabsLtd/starlabs-cursor-theme.git ##Cursor Theme
+
 # Now, moving .themes to .themes-backup
 mv .themes .themes-backup
+
 # .themes contain both gtk and gnome themes, we're just creating a link at that location for the downloaded theme
+
 # gtk goes into .themes
 ln -s ~/Projects/flat-remix-gtk ~/.themes
+
 # gnome goes into .local/share/themes
-# the reason i'm doing this is because most of the projects are stored in that folder and id be easy to update the theme later.
-# belive me ive tried both
 mv .local/share/themes .local/share/themes-backup
 ln -s ~/Projects/flat-remix-gnome ~/.local/share/themes
+
 # Now, .icons to .icons-backup
 mv .icons .icons-backup
 ln -s ~/Projects/flat-remix ~/.icons
-
-##Cursor theme
-sudo mv /usr/share/icons/Cursor /usr/share/icons/Cursors-backup
-sudo ln -s ~/Projects/starlabs-cursor-theme/themes/StarLabs /usr/share/icons/Cursors
 
 # Option to select the gtk theme
 echo Flat-Remix-GTK-Blue
@@ -70,7 +68,7 @@ echo Flat-Remix-GTK-Yellow-Darkest-NoBorder
 echo Flat-Remix-GTK-Yellow-Darkest-Solid
 echo Flat-Remix-GTK-Yellow-Darkest
 
-echo Enter choice : 
+echo Enter choice :
 read flatremixgtk
 gsettings set org.gnome.desktop.interface gtk-theme "$flatremixgtk"
 echo $flatfemixgtk Applied !!
@@ -79,7 +77,7 @@ echo $flatfemixgtk Applied !!
 echo Flat-Remix-Blue     Flat-Remix-Blue-Light    Flat-Remix-Blue-Dark
 echo Flat-Remix-Yellow   Flat-Remix-Yellow-Light  Flat-Remix-Yellow-Dark
 echo Flat-Remix-Green    Flat-Remix-Green-Light   Flat-Remix-Green-Dark
-echo Flat-Remix-Red      Flat-Remix-Red-Light     Flat-Remix-Red-Dark   
+echo Flat-Remix-Red      Flat-Remix-Red-Light     Flat-Remix-Red-Dark
 
 echo Enter Choice :
 read flatremix
@@ -91,16 +89,12 @@ echo Flat-Remix                    Flat-Remix-fullPanel
 echo Flat-Remix-Dark               Flat-Remix-Dark-fullPanel
 echo Flat-Remix-Miami              Flat-Remix-Miami-fullPanel
 echo Flat-Remix-Miami-Dark         Flat-Remix-Miami-Dark-fullPanel
-echo Flat-Remix-Darkest            Flat-Remix-Darkest-fullPanel   
+echo Flat-Remix-Darkest            Flat-Remix-Darkest-fullPanel
 
 echo Enter Choice :
 read flatremixgnome
 gsettings set org.gnome.desktop.wm.preferences theme "$flatremixgnome"
 echo $flatremixgnome Applied !
-
-echo Setting Cursor theme to StarLabs Cursor...
-gsettings set org.gnome.desktop.interface cursor-theme 'Cursors'
-echo Starlabs Cursor theme applied !
 
 echo Thanks : )
 echo Check out my GitHub profile at github.com/kushagrakarira
