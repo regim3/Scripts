@@ -81,7 +81,7 @@ echo Flat-Remix-Red      Flat-Remix-Red-Light     Flat-Remix-Red-Dark
 
 echo Enter Choice :
 read flatremix
-gsettings set org.gnome.desktop.interface icon-theme "$flatremix"
+gsettings set org.gnome.desktop.interface icon-themce "$flatremix"
 echo $flatremix Applied !
 
 #option to select gnome theme
@@ -95,6 +95,14 @@ echo Enter Choice :
 read flatremixgnome
 gsettings set org.gnome.desktop.wm.preferences theme "$flatremixgnome"
 echo $flatremixgnome Applied !
-
-echo Thanks : )
+echo Thanks
 echo Check out my GitHub profile at github.com/kushagrakarira
+
+## Cursor Theme
+## This might need su permission as the folder is to be in /usr/share/icons
+# echo Making Cursor folder in ~/Projects This will be linked to cursor folder in /usr/share
+# mv ~/Projects/Cursor ~/Project/Cursor-backup
+# mkdir ~/Projects/Cursor
+# ln -s ~/Projects/Cursor /usr/share/icons/Cursor
+### set default cursor theme to Cursor
+# echo You can now move any theme to ~/Projects/Cursor and it'll be applied instantly !!
